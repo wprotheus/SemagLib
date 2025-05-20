@@ -3,6 +3,7 @@ package br.dev.olimpus.semaglib.service;
 import br.dev.olimpus.semaglib.domain.Game;
 import br.dev.olimpus.semaglib.dto.GameDTO;
 import br.dev.olimpus.semaglib.dto.MinGameDTO;
+import br.dev.olimpus.semaglib.projections.MinGameProjection;
 import br.dev.olimpus.semaglib.repository.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,6 +26,14 @@ public class GameService {
     @Transactional(readOnly = true)
     public List<MinGameDTO> findAll() {
         List<Game> gameResult = gameRepository.findAll();
+        return gameResult.stream()
+                .map(game -> new MinGameDTO(game))
+                .toList();
+    }
+
+    @Transactional(readOnly = true)
+    public List<MinGameDTO> findByList(Long listId) {
+        List<MinGameProjection> gameResult = gameRepository.searchByList(listId);
         return gameResult.stream()
                 .map(game -> new MinGameDTO(game))
                 .toList();
