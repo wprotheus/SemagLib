@@ -8,7 +8,7 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public class MinGameDTO {
-    private long id;
+    private Long id;
     private String title;
     private Integer year;
     private String imgUrl;

@@ -11,7 +11,7 @@ import java.util.Objects;
 public class GameList {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     private String title;
 
     @Override
