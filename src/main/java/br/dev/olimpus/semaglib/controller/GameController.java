@@ -1,6 +1,5 @@
 package br.dev.olimpus.semaglib.controller;
 
-import br.dev.olimpus.semaglib.domain.Game;
 import br.dev.olimpus.semaglib.dto.MinGameDTO;
 import br.dev.olimpus.semaglib.service.GameService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -5,8 +5,8 @@ import lombok.Data;
 
 import java.util.Objects;
 
-@Entity
 @Data
+@Entity
 @Table(name = "tb_game")
 public class Game {
     @Id

@@ -11,7 +11,6 @@ public class MinGameDTO {
     private long id;
     private String title;
     private Integer year;
-    private String genre;
     private String imgUrl;
     private String shortDescription;
 
@@ -22,7 +21,6 @@ public class MinGameDTO {
         id = game.getId();
         title = game.getTitle();
         year = game.getYear();
-        genre = game.getGenre();
         imgUrl = game.getImgUrl();
         shortDescription = game.getShortDescription();
     }
