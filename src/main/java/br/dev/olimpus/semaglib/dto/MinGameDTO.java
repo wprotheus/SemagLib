@@ -14,9 +14,6 @@ public class MinGameDTO {
     private String imgUrl;
     private String shortDescription;
 
-    public MinGameDTO() {
-    }
-
     public MinGameDTO(Game game) {
         id = game.getId();
         title = game.getTitle();
