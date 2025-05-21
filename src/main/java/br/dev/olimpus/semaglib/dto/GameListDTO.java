@@ -11,8 +11,8 @@ public class GameListDTO {
     private String title;
 
     public GameListDTO(GameList gameList) {
-        this.id = gameList.getId();
-        this.title = gameList.getTitle();
+        id = gameList.getId();
+        title = gameList.getTitle();
 
     }
 }

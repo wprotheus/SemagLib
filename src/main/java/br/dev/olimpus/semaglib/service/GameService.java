@@ -8,6 +8,7 @@ import br.dev.olimpus.semaglib.repository.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -18,24 +19,20 @@ public class GameService {
     private GameRepository gameRepository;
 
     @Transactional(readOnly = true)
-    public GameDTO findById(Long id) {
-        Game game = gameRepository.findById(id).get();
-        return new GameDTO(game);
+    public GameDTO findById(@PathVariable Long listId) {
+        Game result = gameRepository.findById(listId).get();
+        return new GameDTO(result);
     }
 
     @Transactional(readOnly = true)
     public List<MinGameDTO> findAll() {
-        List<Game> gameResult = gameRepository.findAll();
-        return gameResult.stream()
-                .map(game -> new MinGameDTO(game))
-                .toList();
+        List<Game> result = gameRepository.findAll();
+        return result.stream().map(MinGameDTO::new).toList();
     }
 
     @Transactional(readOnly = true)
-    public List<MinGameDTO> findByList(Long listId) {
-        List<MinGameProjection> gameResult = gameRepository.searchByList(listId);
-        return gameResult.stream()
-                .map(game -> new MinGameDTO(game))
-                .toList();
+    public List<MinGameDTO> findByGameList(Long listId) {
+        List<MinGameProjection> games = gameRepository.searchByList(listId);
+        return games.stream().map(MinGameDTO::new).toList();
     }
 }

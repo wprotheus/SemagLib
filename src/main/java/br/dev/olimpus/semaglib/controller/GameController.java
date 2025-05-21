@@ -25,6 +25,7 @@ public class GameController {
     }
 
     public List<MinGameDTO> findAll() {
-        return gameService.findAll();
+        List<MinGameDTO> gameDTOList = gameService.findAll();
+        return gameDTOList;
     }
 }
