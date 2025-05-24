@@ -8,7 +8,7 @@
 
 >---
 
-#### Projeto implementado seguindo as aulas disponibilizadas por [DevSuperior](https://devsuperior.com.br/), conforme calendário abaixo.  
+#### Projeto implementado seguindo as aulas disponibilizadas por [DevSuperior](https://devsuperior.com.br/), conforme calendário abaixo (19maio2025 a 23maio2025).  
 #### Realizei algumas alterações no código original devido diferenças de versões, mas ainda é uma réplica do projeto DSList.
 
 ---
