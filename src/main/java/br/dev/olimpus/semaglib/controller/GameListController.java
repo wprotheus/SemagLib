@@ -2,6 +2,7 @@ package br.dev.olimpus.semaglib.controller;
 
 import br.dev.olimpus.semaglib.dto.GameListDTO;
 import br.dev.olimpus.semaglib.dto.MinGameDTO;
+import br.dev.olimpus.semaglib.dto.ReplacementDTO;
 import br.dev.olimpus.semaglib.service.GameListService;
 import br.dev.olimpus.semaglib.service.GameService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,8 +38,8 @@ public class GameListController {
         return result;
     }
 
-//    @PostMapping(value = "/{listId}/replacement")
-//    public void move(@PathVariable Long listId, @RequestBody ReplacementDTO body) {
-//        gameListService.move(listId, body.getSourceIndex(), body.getDestinationIndex());
-//    }
+    @PostMapping(value = "/{listId}/replacement")
+    public void move(@PathVariable Long listId, @RequestBody ReplacementDTO body) {
+        gameListService.move(listId, body.getSourceIndex(), body.getDestinationIndex());
+    }
 }
