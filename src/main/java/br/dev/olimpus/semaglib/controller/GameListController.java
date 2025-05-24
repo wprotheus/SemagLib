@@ -22,20 +22,20 @@ public class GameListController {
 
     @GetMapping(value = "/{id}")
     public GameListDTO findById(@PathVariable Long id) {
-        GameListDTO result = gameListService.findById(id);
-        return result;
+        GameListDTO gameListDTO = gameListService.findById(id);
+        return gameListDTO;
     }
 
     @GetMapping
     public List<GameListDTO> findAll() {
-        List<GameListDTO> result = gameListService.findAll();
-        return result;
+        List<GameListDTO> listDTOList = gameListService.findAll();
+        return listDTOList;
     }
 
     @GetMapping(value = "/{listId}/games")
     public List<MinGameDTO> findGames(@PathVariable Long listId) {
-        List<MinGameDTO> result = gameService.findByGameList(listId);
-        return result;
+        List<MinGameDTO> gameDTOList = gameService.findByGameList(listId);
+        return gameDTOList;
     }
 
     @PostMapping(value = "/{listId}/replacement")
